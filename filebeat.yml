@@ -1,0 +1,27 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - ${INPUT_PATH:/volume/*.log}
+
+# elasticsearch output info
+output.elasticsearch:
+  hosts: ['${ES_HOST:127.0.0.1}:${ES_PORT:9200}']
+  username: ${ES_USERNAME:elastic}
+  password: ${ES_PASS:MagicWord}
+  index: "${INDEX_NAME:filebeat}-%{+yyyy.MM.dd}"
+  timeout: 180
+  backoff.max: 120
+
+setup.template.enabled: true
+
+# if you change output.elasticsearch you have to change this two settings
+setup.template.name: "${INDEX_NAME:filebeat}"
+setup.template.pattern: "${INDEX_NAME:filebeat}-*"
+
+# enable dashboards
+setup.dashboards.enabled: true
+setup.dashboards.index: "${INDEX_NAME:filebeat}-*"
+setup.dashboards.retry.enabled: true
+setup.dashboards.retry.interval: 3
+setup.dashboards.retry.maximum: 20
