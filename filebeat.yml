@@ -4,9 +4,6 @@ filebeat.inputs:
   paths:
     - ${INPUT_PATH:/volume/*.log}
 
-processors:
-- add_cloud_metadata:
-
 # elasticsearch output info
 output.elasticsearch:
   hosts: ['${ES_HOST:127.0.0.1}:${ES_PORT:9200}']
