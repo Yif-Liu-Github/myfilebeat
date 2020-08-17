@@ -1,4 +1,4 @@
-FROM docker.elastic.co/beats/filebeat:6.3.2
+FROM docker.elastic.co/beats/filebeat
 COPY filebeat.yml /usr/share/filebeat/filebeat.yml
 USER root
 VOLUME ["/volume"]
