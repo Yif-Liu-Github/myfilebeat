@@ -4,3 +4,4 @@ USER root
 VOLUME ["/volume"]
 RUN chmod 777 /volume && \
 chown root:filebeat /usr/share/filebeat/filebeat.yml
+CMD [ "/usr/sbin/init"]
