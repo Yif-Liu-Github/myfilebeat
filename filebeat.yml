@@ -26,8 +26,8 @@ setup.template.name: "${INDEX_NAME:filebeat}"
 setup.template.pattern: "${INDEX_NAME:filebeat}-*"
 
 # enable dashboards
-setup.dashboards.enabled: true
-setup.dashboards.index: "${INDEX_NAME:filebeat}-*"
-setup.dashboards.retry.enabled: true
-setup.dashboards.retry.interval: 3
-setup.dashboards.retry.maximum: 20
+#setup.dashboards.enabled: true
+#setup.dashboards.index: "${INDEX_NAME:filebeat}-*"
+#setup.dashboards.retry.enabled: true
+#setup.dashboards.retry.interval: 3
+#setup.dashboards.retry.maximum: 20
